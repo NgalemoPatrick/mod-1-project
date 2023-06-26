@@ -26,6 +26,7 @@
 3. Abbreviation
 4. Acromyms
 5. you can't make a word, use a turn to change all the tiles
+6. 30 second per turn
 
 ## Option
 1. Beginner 70 points to win
