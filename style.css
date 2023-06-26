@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    letter-spacing: 2px;
 }
 
 body {
@@ -23,4 +24,18 @@ body {
     height: 900px;
     margin-left: 18%;
     margin-top: 10%;
+}
+
+/* header style */
+header h2 {
+    border: solid black;
+    width: 1200px;
+    height: 55px;
+    border-color: #FFF;
+    color: #FFF;
+    margin-top: 55px;
+    margin-left: 18%;
+    text-align: center;
+    padding-top: 10px;
+    
 }
