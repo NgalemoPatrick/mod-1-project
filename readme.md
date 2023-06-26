@@ -26,3 +26,8 @@
 3. Abbreviation
 4. Acromyms
 5. you can't make a word, use a turn to change all the tiles
+
+## Option
+1. Beginner 70 points to win
+2. Intermediate 120 points
+3. Expert 200 points
