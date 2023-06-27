@@ -106,3 +106,44 @@ header h2 {
 .btn:hover {
     background-color: lightseagreen;
 }
+
+/* Option page style */
+
+.don-show {
+    display: none;
+}
+
+.option-page {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 205px;
+    opacity: 0;
+}
+
+
+.player-1, .player-2, .player-3, .player-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 100px;
+    background-color: #000;
+    color: white;
+    font-size: 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+
+.player-1:hover, .player-2:hover, .player-3:hover, .player-4:hover {
+    background-color: lightseagreen;
+}
+
+
+/* Game page style */
+.game-page {
+    display: flex;
+}
