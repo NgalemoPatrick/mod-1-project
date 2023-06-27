@@ -124,7 +124,7 @@ header h2 {
 }
 
 
-.player-1, .player-2, .player-3, .player-4 {
+.player {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -138,12 +138,12 @@ header h2 {
 
 }
 
-.player-1:hover, .player-2:hover, .player-3:hover, .player-4:hover {
+.player:hover {
     background-color: lightseagreen;
 }
 
 
 /* Game page style */
 .game-page {
-    display: flex;
+    display: none;
 }
