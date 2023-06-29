@@ -209,7 +209,7 @@ header h2 {
     align-items: center;
     width: 100%;
     height: 110px;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
 }
 
 .answer {
@@ -229,7 +229,7 @@ header h2 {
     gap: 35px;
     width: 100%;
     height: 110px;
-    background-color: skyblue;
+    /* background-color: skyblue; */
     padding-top: 22px;
 }
 
@@ -246,4 +246,10 @@ header h2 {
 
 .reset:hover, .check:hover, .change:hover {
     background-color: lightseagreen;
+}
+
+.display-letter {
+    font-size: 4rem;
+    font-weight: bolder;
+    letter-spacing: 3px;
 }

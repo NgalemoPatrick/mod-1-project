@@ -1,8 +1,37 @@
 // My list
-const myList = ['scramble','display','javascritp','react','node'];
+ const myList = ['scramble','display','javascript','react','node'];
 
-// shuffle function
+// // function to get random word
+// const randWord = (myList) => {
+//     for(let i = 0; i < myList.length; i ++) {
+//         const randIndex = Math.floor(Math.random()*word.length);
+//         const selecttWord = myList[randIndex];
+//     }
+//     return selectWord
+// }
 
+
+
+
+// // shuffle function
+// const arrWord = randWord.split('');
+
+// const shulleWord = (word) => {
+//     for(let i = 0; i < arrWord.length; i++) {
+//         const randIndex = Math.floor(Math.random()*word.length);
+//         // declare a variable to temporally store a char
+//         let tempChar = '';
+//         // variable to get the current char of the array
+//         let currentChar = arrWord[randIndex];
+//         // variable to get a random index
+//         let randChar = arrWord[i];
+//         // swap algo
+//         tempChar = currentChar;
+//         arrWord[i] = randChar;
+//         arrWord[randIndex] = tempChar;
+//     }   
+//         return arrWord;
+// }
 
 // class playe
 
@@ -56,6 +85,35 @@ document.addEventListener('DOMContentLoaded', function() {
                         document.querySelector('.get-player-name').style.display = 'none';
                         document.querySelector('.game-page').style.display = 'flex';
 
+                        document.querySelector('.change').onclick = () => {
+
+                            //  get a random number within th array range
+                            const randIndex = Math.floor(Math.random()*myList.length);
+
+                            // get a random string within the list
+                            const word = myList[randIndex];
+
+                            // convert the string into an array of character
+                            let arr = word.split('');
+
+                            // shuffle the array and return a join string
+                            for(let i = 0; i < arr.length; i++) {
+                                const randIndex = Math.floor(Math.random()*arr.length);
+                                    // declare a variable to temporally store a char
+                                let tempChar = '';
+                                    // variable to get the current char of the array
+                                let currentChar = arr[randIndex];
+                                        // variable to get a random index
+                                let randChar = arr[i];
+                                        // swap algo
+                                tempChar = currentChar;
+                                arr[i] = randChar;
+                                arr[randIndex] = tempChar;
+                            }   
+                                
+                            document.querySelector('.display-letter').textContent = arr.join();
+                        }
+
                     }
                     
                 }else if(player.dataset.name === 'player2'){
@@ -69,4 +127,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
     })
+
 })
