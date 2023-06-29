@@ -1,4 +1,10 @@
-// class player
+// My list
+const myList = ['scramble','display','javascritp','react','node'];
+
+// shuffle function
+
+
+// class playe
 
 class Player {
     name = '';
@@ -46,7 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         // read the player name and pass it to the date 
                         const pName = document.querySelector('#name').value;
                         document.querySelector('.player-name').innerHTML = player.dataset.name = pName;
-                        document.querySelector('#name').innerHTML = '';
+                        document.querySelector('#name').innerHTML = ' ';
+                        document.querySelector('.get-player-name').style.display = 'none';
+                        document.querySelector('.game-page').style.display = 'flex';
+
                     }
                     
                 }else if(player.dataset.name === 'player2'){
