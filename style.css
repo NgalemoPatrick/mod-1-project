@@ -161,5 +161,26 @@ header h2 {
 
 .get-player-name {
     display: none;
-    
+    flex-direction: column;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 500px;
+    height: 100px;
+    background-color: #000;
+    color: white;
+    font-size: 2rem;
+    border-radius: 50px;
+    cursor: pointer; */
+}
+
+
+.player-name:hover {
+    background-color: lightseagreen;
 }

@@ -13,6 +13,9 @@ class Player {
 }
 
 
+// player instance
+const onePlayer = new Player();
+
 
 
 // DOM manipulation
@@ -26,18 +29,33 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.btn').onclick = () => {
 
         document.querySelector('.welcome-page').style.display = 'none';
-        document.querySelector('.option-page').style.display = 'flex';
-        
-        
+        document.querySelector('.option-page').style.display = 'flex';   
     }
 
     // select option to enter the game
     document.querySelectorAll(".player").forEach((player) => {
 
         player.onclick = () => {
+
             document.querySelector('.option-page').style.display = 'none';
             document.querySelector('.get-player-name').style.display = 'flex';
-                document.querySelector('.player-name').innerHTML = player.dataset.name;
+
+                if(player.dataset.name === 'player1'){
+
+                    document.querySelector('#btn').onclick = () => {
+                        // read the player name and pass it to the date 
+                        const pName = document.querySelector('#name').value;
+                        document.querySelector('.player-name').innerHTML = player.dataset.name = pName;
+                        document.querySelector('#name').innerHTML = '';
+                    }
+                    
+                }else if(player.dataset.name === 'player2'){
+                    document.querySelector('.player-name').innerHTML = player.dataset.name ='Ngalemo';
+                }else if(player.dataset.name === 'player3'){
+                    document.querySelector('.player-name').innerHTML = player.dataset.name ='Nguegoue';
+                }else if(player.dataset.name === 'player4'){
+                    document.querySelector('.player-name').innerHTML = player.dataset.name ='Pat1genre';
+                }
     
         }
         
