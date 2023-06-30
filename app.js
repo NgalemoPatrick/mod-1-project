@@ -1,5 +1,5 @@
 // My list
- const myList = ['scramble','display','javascript','react','node'];
+ const myList = ['scramble','display','javascript','react','node','method','function'];
 
 
 // // shuffle function
@@ -101,25 +101,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             // --------------------------- look for the issue-----------------
                             // shuffle arr
-                            for(let i = 0; i < arr.length; i++) {
+                            for(let i = 0; i < arr.length; i++){
 
                                 // get a random number within the array range
                                 const randIndex = Math.floor(Math.random()*arr.length);
 
                                 // declare a variable to temporally store a char
-                                let tempChar = '';
-
-                                // variable to get the current char of the array
-                                let currentChar = arr[randIndex];
+                                let tempChar       // variable to get the current char of the array
+                                let currentChar = arr[i];
 
                                 // variable to get a random index
-                                let randChar = arr[i];
+                                let randChar = arr[randIndex];
 
                                 // swap algo
                                 tempChar = currentChar;
                                 arr[i] = randChar;
                                 arr[randIndex] = tempChar;
-                                
                             }   
 
                             document.querySelector('.display-letter').innerHTML = arr.join();
@@ -140,13 +137,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             // clear the input text field
                             document.querySelector('#answ').value = '';
 
-                            if(playerAnsw === word) {
-                                scoreVarInt = scoreVarInt + 5;
-                                document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
-                            }else{
-                                scoreVarInt = scoreVarInt - 2;
-                                document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+                            for(let i = 0; i < myList.length; i++){
+                                if(playerAnsw === myList[i]) {
+                                    scoreVarInt = scoreVarInt + 5;
+                                    document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+                                    
+                                } 
                             }
+                            
                     
                         }
 
