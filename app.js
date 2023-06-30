@@ -1,24 +1,14 @@
 // My list
  const myList = ['scramble','display','javascript','react','node'];
 
-// // function to get random word
-// const randWord = (myList) => {
-//     for(let i = 0; i < myList.length; i ++) {
-//         const randIndex = Math.floor(Math.random()*word.length);
-//         const selecttWord = myList[randIndex];
-//     }
-//     return selectWord
-// }
-
-
-
 
 // // shuffle function
 // const arrWord = randWord.split('');
 
-// const shulleWord = (word) => {
+// function shuffleWord(arrWord) {
+
 //     for(let i = 0; i < arrWord.length; i++) {
-//         const randIndex = Math.floor(Math.random()*word.length);
+//         const randIndex = Math.floor(Math.random()*arrWord.length);
 //         // declare a variable to temporally store a char
 //         let tempChar = '';
 //         // variable to get the current char of the array
@@ -33,7 +23,7 @@
 //         return arrWord;
 // }
 
-// class playe
+// // class playe
 
 class Player {
     name = '';
@@ -73,17 +63,30 @@ document.addEventListener('DOMContentLoaded', function() {
         player.onclick = () => {
 
             document.querySelector('.option-page').style.display = 'none';
+
             document.querySelector('.get-player-name').style.display = 'flex';
 
                 if(player.dataset.name === 'player1'){
 
                     document.querySelector('#btn').onclick = () => {
+
                         // read the player name and pass it to the date 
                         const pName = document.querySelector('#name').value;
+
                         document.querySelector('.player-name').innerHTML = player.dataset.name = pName;
-                        document.querySelector('#name').innerHTML = ' ';
+
+
+                        document.querySelector('#name').value = '';
+
                         document.querySelector('.get-player-name').style.display = 'none';
+
                         document.querySelector('.game-page').style.display = 'flex';
+
+                        document.querySelector('#pln').innerHTML = pName;
+                       
+                        // ----------------------------------------------------
+                        // variable to store the random word
+                        
 
                         document.querySelector('.change').onclick = () => {
 
@@ -91,27 +94,60 @@ document.addEventListener('DOMContentLoaded', function() {
                             const randIndex = Math.floor(Math.random()*myList.length);
 
                             // get a random string within the list
-                            const word = myList[randIndex];
+                                const word = myList[randIndex];
 
                             // convert the string into an array of character
                             let arr = word.split('');
 
-                            // shuffle the array and return a join string
+                            // --------------------------- look for the issue-----------------
+                            // shuffle arr
                             for(let i = 0; i < arr.length; i++) {
+
+                                // get a random number within the array range
                                 const randIndex = Math.floor(Math.random()*arr.length);
-                                    // declare a variable to temporally store a char
+
+                                // declare a variable to temporally store a char
                                 let tempChar = '';
-                                    // variable to get the current char of the array
+
+                                // variable to get the current char of the array
                                 let currentChar = arr[randIndex];
-                                        // variable to get a random index
+
+                                // variable to get a random index
                                 let randChar = arr[i];
-                                        // swap algo
+
+                                // swap algo
                                 tempChar = currentChar;
                                 arr[i] = randChar;
                                 arr[randIndex] = tempChar;
-                            }   
                                 
-                            document.querySelector('.display-letter').textContent = arr.join();
+                            }   
+
+                            document.querySelector('.display-letter').innerHTML = arr.join();
+
+                        }
+
+                        
+                            // check if player answer is the correct word.
+                        document.querySelector('.check').onclick = () => {
+
+                            // get the player answer
+                            const playerAnsw = document.querySelector('#answ').value;
+
+                            
+                            // score variable
+                            let scoreVarInt = 0;
+                            
+                            // clear the input text field
+                            document.querySelector('#answ').value = '';
+
+                            if(playerAnsw === word) {
+                                scoreVarInt = scoreVarInt + 5;
+                                document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+                            }else{
+                                scoreVarInt = scoreVarInt - 2;
+                                document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+                            }
+                    
                         }
 
                     }
