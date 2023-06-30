@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         
                             // check if player answer is the correct word.
+                            let scoreVarInt = 0;
                         document.querySelector('.check').onclick = () => {
 
                             // get the player answer
@@ -132,10 +133,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             
                             // score variable
-                            let scoreVarInt = 0;
+                            
                             
                             // clear the input text field
                             document.querySelector('#answ').value = '';
+                            
+                            // clear the display letter area
+                            document.querySelector('.display-letter').innerHTML = '';
 
                             for(let i = 0; i < myList.length; i++){
                                 if(playerAnsw === myList[i]) {
