@@ -19,12 +19,13 @@ body {
 /* my style */
 
 .main-container {
-    background-color: #FFF;
+    background-color: hwb(60 52% 11%);
     width: 1200px;
     height: 900px;
     margin-left: 18%;
     margin-top: 5%;
     margin-bottom: 15%;
+    border-radius: 20px;
     /* display: flex;
     flex-direction: column;
     justify-content: space-between; */
@@ -32,16 +33,17 @@ body {
 
 /* header style */
 header h2 {
-    border: solid black;
+    /* border: solid black; */
     width: 1200px;
     height: 55px;
-    border-color: black;
+    /* border-color: black; */
     color: black;
     margin-top: 55px;
     margin-left: 18%;
     text-align: center;
     padding-top: 10px;
-    background-color: lightseagreen;
+    background-color: hwb(60 52% 11%);
+    border-radius: 20px;
     
 }
 
@@ -66,7 +68,7 @@ header h2 {
     /* background-color: black; */
     margin: 36px;
     border-radius: 50px;
-    background-color: lightseagreen;
+    background-color: black;
 
 }
 
@@ -74,20 +76,20 @@ header h2 {
     font-size: 2rem;
     padding-top: 65px;
     margin: 15px;
-    color: black;
+    color: white;
 
 }
 
 .rules {
     height: 500px;
-    /* background-color: black; */
+    background-color: black;
     margin: 36px;
     border-radius: 22px;
-    background-color: lightseagreen;
+    
 }
 
 .rules p {
-    color: black;
+    color: white;
     font-size: 2rem;
     margin: 15px;
 }
