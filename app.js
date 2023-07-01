@@ -54,9 +54,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.btn').onclick = () => {
 
         document.querySelector('.welcome-page').style.display = 'none';
-        document.querySelector('.option-page').style.display = 'flex';   
+        document.querySelector('.option-page').style.display = 'flex';  
+        
     }
 
+    document.querySelector('.reset').onclick = () => {
+        document.querySelector('.welcome-page').style.display = 'flex';
+        document.querySelector('.game-page').style.display = 'none'; 
+    }
     // select option to enter the game
     document.querySelectorAll(".player").forEach((player) => {
 
@@ -73,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         // read the player name and pass it to the date 
                         const pName = document.querySelector('#name').value;
 
-                        document.querySelector('.player-name').innerHTML = player.dataset.name = pName;
+                        // document.querySelector('.player-name').innerHTML = player.dataset.name = pName;
 
 
                         document.querySelector('#name').value = '';
@@ -94,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             const randIndex = Math.floor(Math.random()*myList.length);
 
                             // get a random string within the list
-                                const word = myList[randIndex];
+                            const word = myList[randIndex];
 
                             // convert the string into an array of character
                             let arr = word.split('');
