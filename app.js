@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                             // check if player answer is the correct word.
                             let scoreVarInt = 0;
-                        document.querySelector('.check').onclick = () => {
+                            document.querySelector('.check').onclick = () => {
 
                             // get the player answer
                             const playerAnsw = document.querySelector('#answ').value;
