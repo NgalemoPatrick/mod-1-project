@@ -72,11 +72,11 @@ header h2 {
 
 }
 
-.welcome-message p {
+.welcome-message > p {
     font-size: 2rem;
     padding-top: 65px;
     margin: 15px;
-    color: white;
+    color: hwb(60 52% 11%);
 
 }
 
@@ -88,8 +88,8 @@ header h2 {
     
 }
 
-.rules p {
-    color: white;
+.rules > p {
+    color: hwb(60 52% 11%);
     font-size: 2rem;
     margin: 15px;
 }
@@ -199,6 +199,10 @@ header h2 {
     padding-left: 4px;
 }
 
+#name[type="text"] {
+    text-align: center;
+}
+
 #btn {
     width: 250px;
     height: 60px;
@@ -295,6 +299,9 @@ header h2 {
     
 }
 
+#answ[type='text'] {
+    text-align: center;
+}
 #answ::placeholder {
    font-size: 1.5rem; 
    color: #333;
