@@ -4,13 +4,14 @@
 //  score variable
 let scoreVarInt = 0;
 
+// declare variable word
+let word = [];
+
 //  counter function to set the timer
 let count = 30;
 function counter() {
    count--;
 }
-
-
 
 // // class playe
 
@@ -107,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             const randIndex = Math.floor(Math.random()*myList.length);
 
                             // get a random string within the list
-                            const word = myList[randIndex];
+                             word = myList[randIndex];
 
                             // convert the string into an array of character
                             let arr = word.split('');
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                             document.querySelector('.display-letter').innerHTML = arr.join();
                             // document.querySelector('.timer').innerHTML = `Time remining: ${setInterval(counter, 1000)}`;
-
+                            
                         }
   
                             // check if player answer is the correct word.
@@ -148,18 +149,25 @@ document.addEventListener('DOMContentLoaded', function() {
                             
                             // clear the input text field
                             document.querySelector('#answ').value = '';
+
                             
                             // clear the display letter area
                             document.querySelector('.display-letter').innerHTML = '';
 
-                            for(let i = 0; i < myList.length; i++){
-
-                                if(playerAnsw === myList[i]) {
+                            // console.log(word);
+                            // check if answer est = word
+                                if(playerAnsw === word) {
                                     scoreVarInt = scoreVarInt + 5;
                                     document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
                                     
-                                } 
-                            }
+                                }else if(playerAnsw !== word){
+                                    scoreVarInt = scoreVarInt - 2;
+                                    document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+                                }else if(playerAnsw === ''){
+                                    scoreVarInt = scoreVarInt + 0;
+                                    document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+                                }
+                            
 
                             // winning state
                             if(scoreVarInt === 10) {
@@ -171,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
 
                     }
-                    
+                // 2 players section 
                 }else if(player.dataset.name === 'player2'){
                     document.querySelector('.player-name').innerHTML = player.dataset.name ='Ngalemo';
                 }else if(player.dataset.name === 'player3'){
