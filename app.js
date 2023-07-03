@@ -4,14 +4,18 @@
 //  score variable
 let scoreVarInt = 0;
 
+// counter function
+let second = 0;
+
+function counter() {
+    second++;
+    // if(second == 30){
+    //     second = 0;
+    // }
+}
+
 // declare variable word
 let word = [];
-
-//  counter function to set the timer
-let count = 30;
-function counter() {
-   count--;
-}
 
 // // class playe
 
@@ -50,17 +54,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // function to quit the game page
     document.querySelector('.reset').onclick = () => {
+        scoreVarInt = 0;
         document.querySelector('.welcome-page').style.display = 'flex';
         document.querySelector('.game-page').style.display = 'none'; 
+        document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
     }
 
-    // function to restart the gane
+    // function to exit the gane
     document.querySelector('.end-game').onclick = () => {
+        scoreVarInt = 0;
         document.querySelector('.welcome-page').style.display = 'flex';
         document.querySelector('.end-of-page').style.display = 'none';
+        document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
     }
 
-    // function exit the game
+    // function restart the game
     document.querySelector('.restart').onclick = () => {
         scoreVarInt = 0;
         document.querySelector('.end-of-page').style.display = 'none';
@@ -134,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             }   
 
                             document.querySelector('.display-letter').innerHTML = arr.join();
-                            // document.querySelector('.timer').innerHTML = `Time remining: ${setInterval(counter, 1000)}`;
+                            document.querySelector('.timer').innerHTML = `Time: ${setInterval(counter, 1000)}`;
                             
                         }
   
@@ -164,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     scoreVarInt = scoreVarInt - 2;
                                     document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
                                 }else if(playerAnsw === ''){
-                                    scoreVarInt = scoreVarInt + 0;
+                                    // scoreVarInt = scoreVarInt + 0;
                                     document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
                                 }
                             
