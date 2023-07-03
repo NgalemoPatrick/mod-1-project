@@ -4,9 +4,7 @@
 //  counter function to set the timer
 let count = 30;
 function counter() {
-    while(count >= 0) {
-        count--;
-   }
+   count--;
 }
 
 
@@ -83,8 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         document.querySelector('.change').onclick = () => {
 
-                            // set the timer
-
                             //  get a random number within th array range
                             const randIndex = Math.floor(Math.random()*myList.length);
 
@@ -115,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             }   
 
                             document.querySelector('.display-letter').innerHTML = arr.join();
+                            // document.querySelector('.timer').innerHTML = `Time remining: ${setInterval(counter, 1000)}`;
 
                         }
 
@@ -126,9 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             // get the player answer
                             const playerAnsw = document.querySelector('#answ').value;
 
-                            
                             // score variable
-                            
                             
                             // clear the input text field
                             document.querySelector('#answ').value = '';
@@ -143,6 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
                                     document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
                                     
                                 } 
+                            }
+
+                            // winning state
+                            if(scoreVarInt === 10) {
+                                document.querySelector('.game-page').style.display = 'none';
+                                document.querySelector('.end-of-page').style.display = 'flex';
                             }
                             
                     

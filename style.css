@@ -26,9 +26,6 @@ body {
     margin-top: 5%;
     margin-bottom: 15%;
     border-radius: 20px;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
 }
 
 /* header style */
@@ -37,7 +34,7 @@ header h2 {
     width: 1200px;
     height: 55px;
     /* border-color: black; */
-    color: black;
+    color: #333;
     margin-top: 55px;
     margin-left: 18%;
     text-align: center;
@@ -68,7 +65,7 @@ header h2 {
     /* background-color: black; */
     margin: 36px;
     border-radius: 50px;
-    background-color: black;
+    background-color: #333;
 
 }
 
@@ -82,7 +79,7 @@ header h2 {
 
 .rules {
     height: 500px;
-    background-color: black;
+    background-color: #333;
     margin: 36px;
     border-radius: 22px;
     
@@ -105,7 +102,7 @@ header h2 {
     border-radius: 40px;
     font-size: 24px;
     cursor: pointer;
-    background-color: #000;
+    background-color: #333;
     color: hwb(60 52% 11%);
 }
 
@@ -132,7 +129,7 @@ header h2 {
     align-items: center;
     width: 500px;
     height: 100px;
-    background-color: #000;
+    background-color: #333;
     color: hwb(60 52% 11%);
     font-size: 2rem;
     border-radius: 50px;
@@ -167,23 +164,13 @@ header h2 {
 .get-player-name {
     display: none;
     flex-direction: column;
-    gap: 40px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* .player-name {
-    display: flex;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 100px;
-    background-color: #000;
-    color: white;
-    font-size: 2rem;
-    border-radius: 50px;
-    cursor: pointer;
-} */
+    height: 900px;
+}
+
+
 #name {
     width: 400px;
     height: 85px;
@@ -202,17 +189,16 @@ header h2 {
     text-align: center;
 }
 
-#btn {
+#btn, .restart, .end-game {
     width: 250px;
     height: 60px;
     border-radius: 15px;
     cursor: pointer;
-    border-width: opx;
     background-color: #333;
 }
 
 #btn:hover {
-    background-color: lightseagreen;;
+    background-color: lightseagreen;
 }
 
 #btn[type='submit'] {
@@ -283,7 +269,9 @@ header h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid black;
+    /* border: solid black; */
+    background-color: #333;
+    color: hwb(60 52% 11%);
     width: 200px;
     height: 65px;
     border-radius: 30px;
@@ -304,7 +292,7 @@ header h2 {
 #answ {
     width: 550px;
     height: 75px;
-    border: 2px solid black;
+    border: 2px solid #333;
     border-radius: 15px;
     font-size: 2rem ;
     
@@ -331,4 +319,20 @@ header h2 {
 
 .end-of-page {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    /* background-color: blueviolet; */
+    height: 900px;
 }
+
+.restart:hover, .end-game:hover {
+    background-color: lightseagreen;
+}
+
+.restart, .end-game {
+    color: hwb(60 52% 11%);
+    font-size: 1.5rem;
+}
+
