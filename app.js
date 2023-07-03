@@ -1,6 +1,9 @@
 // My list
  const myList = ['scramble','display','javascript','react','node','method','function'];
 
+//  score variable
+let scoreVarInt = 0;
+
 //  counter function to set the timer
 let count = 30;
 function counter() {
@@ -44,10 +47,29 @@ document.addEventListener('DOMContentLoaded', function() {
         
     }
 
+    // function to quit the game page
     document.querySelector('.reset').onclick = () => {
         document.querySelector('.welcome-page').style.display = 'flex';
         document.querySelector('.game-page').style.display = 'none'; 
     }
+
+    // function to restart the gane
+    document.querySelector('.end-game').onclick = () => {
+        document.querySelector('.welcome-page').style.display = 'flex';
+        document.querySelector('.end-of-page').style.display = 'none';
+    }
+
+    // function exit the game
+    document.querySelector('.restart').onclick = () => {
+        scoreVarInt = 0;
+        document.querySelector('.end-of-page').style.display = 'none';
+        document.querySelector('.game-page').style.display = 'flex';
+        
+        // set the score to 0
+        document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+    }
+
+    
     // select option to enter the game
     document.querySelectorAll(".player").forEach((player) => {
 
@@ -114,10 +136,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             // document.querySelector('.timer').innerHTML = `Time remining: ${setInterval(counter, 1000)}`;
 
                         }
-
-                        
+  
                             // check if player answer is the correct word.
-                            let scoreVarInt = 0;
+                           
                             document.querySelector('.check').onclick = () => {
 
                             // get the player answer
@@ -144,9 +165,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             if(scoreVarInt === 10) {
                                 document.querySelector('.game-page').style.display = 'none';
                                 document.querySelector('.end-of-page').style.display = 'flex';
+                                document.querySelector('#message').innerHTML = 'WELL DONE, YOU WIN.'
                             }
-                            
-                    
+                                  
                         }
 
                     }
