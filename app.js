@@ -1,27 +1,15 @@
 // My list
  const myList = ['scramble','display','javascript','react','node','method','function'];
 
+//  counter function to set the timer
+let count = 30;
+function counter() {
+    while(count >= 0) {
+        count--;
+   }
+}
 
-// // shuffle function
-// const arrWord = randWord.split('');
 
-// function shuffleWord(arrWord) {
-
-//     for(let i = 0; i < arrWord.length; i++) {
-//         const randIndex = Math.floor(Math.random()*arrWord.length);
-//         // declare a variable to temporally store a char
-//         let tempChar = '';
-//         // variable to get the current char of the array
-//         let currentChar = arrWord[randIndex];
-//         // variable to get a random index
-//         let randChar = arrWord[i];
-//         // swap algo
-//         tempChar = currentChar;
-//         arrWord[i] = randChar;
-//         arrWord[randIndex] = tempChar;
-//     }   
-//         return arrWord;
-// }
 
 // // class playe
 
@@ -95,6 +83,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         document.querySelector('.change').onclick = () => {
 
+                            // set the timer
+
                             //  get a random number within th array range
                             const randIndex = Math.floor(Math.random()*myList.length);
 
@@ -147,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             document.querySelector('.display-letter').innerHTML = '';
 
                             for(let i = 0; i < myList.length; i++){
+
                                 if(playerAnsw === myList[i]) {
                                     scoreVarInt = scoreVarInt + 5;
                                     document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;

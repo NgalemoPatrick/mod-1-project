@@ -298,6 +298,7 @@ header h2 {
     font-size: 4rem;
     font-weight: bolder;
     letter-spacing: 3px;
+    text-decoration: underline;
 }
 
 #answ {
