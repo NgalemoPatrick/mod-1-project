@@ -157,8 +157,9 @@ header {
     display: none;
     flex-direction: column;
     gap: 50px;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    height: 80vh;
     /* padding-top: 205px; */
 }
 
@@ -379,7 +380,7 @@ header {
     align-items: center;
     gap: 150px;
     /* background-color: blueviolet; */
-    height: 900px;
+    height: 80vh;
 }
 
 .restart:hover, .end-game:hover {
