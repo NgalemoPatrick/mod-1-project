@@ -7,6 +7,7 @@ let scoreVarInt = 0;
 // counter function
 let second = 0;
 
+// function to set the timer
 function counter() {
     second++;
 }
@@ -37,16 +38,14 @@ class Player {
 }
 
 
-// player instance
+//--------------------------------- player instance
 const onePlayer = new Player();
 
 
-
-// DOM manipulation
-
-// function to read the player name
+//------------------------- function to read the player name
 const playerName = document.querySelectorAll('.player');
 
+//-------------------------------- DOM manipulation
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -116,7 +115,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         
 
                         document.querySelector('.change').onclick = () => {
-
+                            
+                            // clear the hint area
+                            document.querySelector('.hint').innerHTML = '';
+                            
                             //  get a random number within th array range
                             const randIndex = Math.floor(Math.random()*myList.length);
 
@@ -158,8 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             // get the player answer
                             const playerAnsw = document.querySelector('#answ').value;
 
-                            // score variable
-                            
                             // clear the input text field
                             document.querySelector('#answ').value = '';
 
@@ -167,20 +167,18 @@ document.addEventListener('DOMContentLoaded', function() {
                             // clear the display letter area
                             document.querySelector('.display-letter').innerHTML = '';
 
-                            // console.log(word);
                             // check if answer est = word
                                 if(playerAnsw === word) {
                                     scoreVarInt = scoreVarInt + 5;
                                     document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
                                     
                                 }else if(playerAnsw !== word){
-                                    scoreVarInt = scoreVarInt - 2;
-                                    document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+                                    
+                                    document.querySelector('.hint').innerHTML = 'incorrect!!';
                                 }else if(playerAnsw === ''){
                                     // scoreVarInt = scoreVarInt + 0;
                                     document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
                                 }
-                            
 
                             // winning state
                             if(scoreVarInt === 10) {
