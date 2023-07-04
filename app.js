@@ -166,6 +166,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     document.querySelector('.check').onclick = () => {
 
+                        // clear the hint 
+                        document.querySelector('.hint').innerHTML = '';
+
                         // get the player answer
                         const playerAnsw = document.querySelector('#answ').value;
 
