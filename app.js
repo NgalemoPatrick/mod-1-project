@@ -9,9 +9,14 @@ let second = 0;
 
 function counter() {
     second++;
-    // if(second == 30){
-    //     second = 0;
-    // }
+}
+
+function timer() {
+    setInterval(counter, 1000);
+    if(second != 30){
+        
+    }
+        return 
 }
 
 // declare variable word
@@ -142,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             }   
 
                             document.querySelector('.display-letter').innerHTML = arr.join();
-                            document.querySelector('.timer').innerHTML = `Time: ${setInterval(counter, 1000)}`;
+                            // document.querySelector('.timer').innerHTML = `Time: ${setInterval(counter, 1000)}`;
                             
                         }
   
