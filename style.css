@@ -109,7 +109,7 @@ header {
 }
 
 .rules > p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: left;
     margin: 5rem;
     background: linear-gradient(to right top,
@@ -117,10 +117,6 @@ header {
     box-shadow: 7px -9px #333;
     border-radius: 1rem;
     padding: 15px;
-}
-
-.rules > p:hover {
-    
 }
 
 .start-btn {
@@ -141,7 +137,6 @@ header {
 
 .btn:hover {
     background-color: #333;
-    /* box-shadow: 7px -7px #333; */
 }
 
 
@@ -164,7 +159,7 @@ header {
     width: 500px;
     height: 100px;
     background-color: #333;
-    color: hwb(60 52% 11%);
+    color: white;
     font-size: 2rem;
     border-radius: 50px;
     cursor: pointer;
@@ -172,7 +167,10 @@ header {
 }
 
 .player:hover {
-    background-color: lightseagreen;
+    background: linear-gradient(to right top,
+     #65dfc9,#6cdbeb);
+    box-shadow: 7px -7px #333;
+    color: #333;
 }
 
 
@@ -228,15 +226,17 @@ header {
     height: 60px;
     border-radius: 15px;
     cursor: pointer;
-    background-color: #333;
+    
+    background-color: lightseagreen;
+    box-shadow: 7px -7px #333;
 }
 
 #btn:hover {
-    background-color: lightseagreen;
+    background-color: white;
 }
 
 #btn[type='submit'] {
-    color: hwb(60 52% 11%);
+    color: #333;
     font-size: 1.5rem;
 }
 
