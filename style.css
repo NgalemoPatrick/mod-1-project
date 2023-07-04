@@ -34,7 +34,7 @@ body {
     backdrop-filter: blur(2rem);
 }
 
-.circle1, .circle2 {
+.circle1, .circle2, .circle3, .circle4 {
     background: white;
     background: linear-gradient(to right bottom, rgba(255,255,255,0.7),
     rgba(255,255,255,0.3));
@@ -53,6 +53,18 @@ body {
     bottom: 1%;
     left: 10%;
     background-color: #333;
+}
+
+.circle3 {
+    bottom: 1%;
+    right: 10%;
+    background-color: #e2e24d;
+}
+
+.circle4 {
+    top: 4%;
+    left: 10%;
+    background-color: #7e1010;
 }
 
 
