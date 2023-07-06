@@ -10,41 +10,35 @@ const myList = {
 let scoreVarInt = 0;
 
 // counter function
-let second = 0;
+let second = 30;
 
 // function to set the timer
 function counter() {
-    second++;
+    second--;
 }
 
-function timer() {
-    setInterval(counter, 1000);
-    if (second != 30) {
-
-    }
-    return
-}
+// setInterval(counter, 1000);
 
 // declare variable word
 let word = [];
 
 // // class playe
 
-class Player {
-    name = '';
-    score = 0;
-    constructor(name) {
-        this.name = name;
-    }
+// class Player {
+//     name = '';
+//     score = 0;
+//     constructor(name) {
+//         this.name = name;
+//     }
 
-    score() {
-        return this.score++;
-    }
-}
+//     score() {
+//         return this.score++;
+//     }
+// }
 
 
-//--------------------------------- player instance
-const onePlayer = new Player();
+// //--------------------------------- player instance
+// const onePlayer = new Player();
 
 
 //------------------------- function to read the player name
@@ -67,6 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.welcome-page').style.display = 'flex';
         document.querySelector('.game-page').style.display = 'none';
         document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+        document.querySelector('.display-letter').innerHTML = '';
+        document.querySelector('.hint').innerHTML = '';
     }
 
     // function to exit the gane
@@ -120,6 +116,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                     document.querySelector('.change').onclick = () => {
+
+                        // set the timer
+                        document.querySelector('.timer').innerHTML = `Time: ${second}`;
 
                         // clear the hint area
                         document.querySelector('.hint').innerHTML = '';
@@ -204,6 +203,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 // 2 players section 
             } else if (player.dataset.name === 'player2') {
+                document.querySelector('.players-2').style.display = 'flex';
+                document.querySelector('.get-player-name').style.display = 'none';
                 document.querySelector('.player-name').innerHTML = player.dataset.name = 'Ngalemo';
             } else if (player.dataset.name === 'player3') {
                 document.querySelector('.player-name').innerHTML = player.dataset.name = 'Nguegoue';
