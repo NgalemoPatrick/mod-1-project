@@ -22,6 +22,9 @@ function counter() {
 // declare variable word
 let word = [];
 
+//variable 
+let isSwitch = true;
+
 // // class playe
 
 // class Player {
@@ -101,8 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     const pName = document.querySelector('#name').value;
 
                     // document.querySelector('.player-name').innerHTML = player.dataset.name = pName;
-
-
                     document.querySelector('#name').value = '';
 
                     document.querySelector('.get-player-name').style.display = 'none';
@@ -205,7 +206,30 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (player.dataset.name === 'player2') {
                 document.querySelector('.players-2').style.display = 'flex';
                 document.querySelector('.get-player-name').style.display = 'none';
-                document.querySelector('.player-name').innerHTML = player.dataset.name = 'Ngalemo';
+                // document.querySelector('#p1').innerHTML = 'Player 1';
+
+                document.querySelector('#plns').onclick = () => {
+                 // get players name ---- player 1
+                    const pName1 = document.querySelector('#players-2-name1').value;
+                    document.querySelector('#players-2-name1').value = '';
+                    document.querySelector('#pln1').innerHTML = pName1;
+                    console.log(pName1)
+
+                    // player 2
+                    const pName2 = document.querySelector('#players-2-name2').value;
+                    document.querySelector('#pln2').innerHTML = pName2;
+                    document.querySelector('#players-2-name2').value = ''; 
+                    document.querySelector('#pln2').innerHTML = pName2;
+                    console.log(pName2)
+                    
+                    // hide get players page and display game page 2
+                    document.querySelector('.players-2').style.display = 'none';
+                    document.querySelector('.game-page-2').style.display = 'flex';
+                       
+                }
+
+
+                // document.querySelector('.player-name').innerHTML = player.dataset.name = 'Ngalemo';
             } else if (player.dataset.name === 'player3') {
                 document.querySelector('.player-name').innerHTML = player.dataset.name = 'Nguegoue';
             } else if (player.dataset.name === 'player4') {

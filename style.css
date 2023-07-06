@@ -205,7 +205,7 @@ header {
 }
 
 
-#name {
+#name, #players-2-name1, #players-2-name2 {
     width: 400px;
     height: 85px;
     border-radius: 15px;
@@ -219,11 +219,31 @@ header {
     padding-left: 4px;
 }
 
+#players-2-name1 ::placeholder {
+    font-size: 1.5rem; 
+    color: #333;
+    font-weight: bolder;
+    padding-left: 4px;
+}
+#players-2-name1[type="text"] {
+    text-align: center;
+}
+
+#players-2-name2 ::placeholder {
+    font-size: 1.5rem; 
+    color: #333;
+    font-weight: bolder;
+    padding-left: 4px;
+}
+#players-2-name2[type="text"] {
+    text-align: center;
+}
+
 #name[type="text"] {
     text-align: center;
 }
 
-#btn, .restart, .end-game {
+#btn, .restart, .end-game, #plns {
     width: 250px;
     height: 60px;
     border-radius: 15px;
@@ -242,11 +262,13 @@ header {
     font-size: 1.5rem;
 }
 
-
+#hbtn {
+    opacity: 0;
+}
 
 /* game page style */
 
-.game-page {
+.game-page, .game-page-2 {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -274,7 +296,7 @@ header {
     margin-top: 15px;
 }
 
-#scr {
+.scr {
     font-size: 2rem;
 }
 
