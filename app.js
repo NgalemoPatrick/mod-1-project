@@ -42,6 +42,29 @@ let isSwitch = true;
 // //--------------------------------- player instance
 // const onePlayer = new Player();
 
+// function to shuffle the word
+
+function shuffle(...arrW) {
+    for (let i = 0; i < arrW.length; i++) {
+
+        // get a random number within the array range
+        const randIndex = Math.floor(Math.random() * arrW.length);
+
+        // declare a variable to temporally store a char
+        let tempChar       // variable to get the current char of the array
+        let currentChar = arrW[i];
+
+        // variable to get a random index
+        let randChar = arrW[randIndex];
+
+        // swap algo
+        tempChar = currentChar;
+        arrW[i] = randChar;
+        arrW[randIndex] = tempChar;
+
+        return arrW;
+    }
+}
 
 //------------------------- function to read the player name
 const playerName = document.querySelectorAll('.player');
@@ -128,7 +151,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // get a random string within the list
                         word = myList.gWord[randIndex];
-                        console.log(word)
+
+                        // console.log(word)
                         // convert the string into an array of character
                         let arr = word.split('');
 
@@ -205,8 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (player.dataset.name === 'player2') {
                 document.querySelector('.players-2').style.display = 'flex';
                 document.querySelector('.get-player-name').style.display = 'none';
-                // document.querySelector('#p1').innerHTML = 'Player 1';
-
+                
                 document.querySelector('#plns').onclick = () => {
                  // get players name ---- player 1
                     const pName1 = document.querySelector('#players-2-name1').value;
@@ -228,12 +251,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // when click to get a word
                 document.querySelector('.change1').onclick = () => {
-                    // set the timer
-                    setInterval(counter, 1000);
+                // set the timer
+                let count = setInterval(counter, 1000);
 
-                    if(second == 20){
-                        console.log("well done");
-                    }  
+                // get the word
+                const randIndex1 = Math.floor(Math.random() * myList.gWord.length);
+
+                        // get a random string within the list
+                        word = myList.gWord[randIndex1];
+
+                        // console.log(word)
+                        // convert the string into an array of character
+                        let arr1 = word.split('');
+
+                        const newWord = shuffle(...arr1);
+
+                        console.log(newWord);
+
+                        // display the letter 
+                        document.querySelector('.display-letter1').innerHTML = newWord.join();
+
+                        // display the hint
+                        document.querySelector('.hint1').innerHTML = myList.hint[randIndex1];
+
+                    // check the answer will stop the timer and reset it to 0
+                    document.querySelector('.check1').onclick = () => {
+                    clearInterval(count);
+                    
+                    }
+
             }
 
                 // document.querySelector('.player-name').innerHTML = player.dataset.name = 'Ngalemo';

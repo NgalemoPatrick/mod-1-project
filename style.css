@@ -333,7 +333,8 @@ header {
     padding-top: 22px;
 }
 
-.reset, .check, .change, .change1 {
+.reset, .check, .change,
+ .change1, .check1, .reset1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -349,12 +350,13 @@ header {
      box-shadow: 5px -7px #333;
 }
 
-.reset:hover, .check:hover, .change:hover, .change1:hover {
+.reset:hover, .check:hover, .change:hover,
+ .change1:hover, .check1:hover, .reset1:hover {
     background: rgb(188, 41, 41);
     color: white;
 }
 
-.display-letter {
+.display-letter, .display-letter1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -386,7 +388,7 @@ header {
    padding-left: 4px;
 }
 
-.hint, .timer {
+.hint, .timer, .hint1, .timer1 {
     /* margin-right: 340px; */
     font-size: 1.5rem;
     font-weight: bolder;
@@ -414,7 +416,7 @@ header {
     font-size: 1.5rem;
 }
 
-.hint {
+.hint, .hint1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -425,7 +427,7 @@ header {
      box-shadow: 5px -7px #333;
 }
 
-.timer {
+.timer, .timer1 {
     background: linear-gradient(to right top,
      #65dfc9,#6cdbeb);
      box-shadow: 5px -7px #333;
