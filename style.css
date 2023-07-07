@@ -313,7 +313,7 @@ header {
      border-radius: 2rem;
     }
 
-.answer {
+.answer, .answer1 {
     display: flex;
     gap: 25px;
     flex-direction: column;
@@ -369,7 +369,7 @@ header {
     /* border: solid black; */
 }
 
-#answ {
+#answ, #answ1 {
     width: 550px;
     height: 75px;
     border: 2px solid #333;
@@ -381,12 +381,24 @@ header {
 #answ[type='text'] {
     text-align: center;
 }
+
+#answ1[type='text'] {
+    text-align: center;
+}
+
 #answ::placeholder {
    font-size: 1.5rem; 
    color: #333;
    font-weight: bolder;
    padding-left: 4px;
 }
+
+#answ1::placeholder {
+    font-size: 1.5rem; 
+    color: #333;
+    font-weight: bolder;
+    padding-left: 4px;
+ }
 
 .hint, .timer, .hint1, .timer1 {
     /* margin-right: 340px; */

@@ -252,33 +252,44 @@ document.addEventListener('DOMContentLoaded', function () {
             // when click to get a word
                 document.querySelector('.change1').onclick = () => {
                 // set the timer
-                let count = setInterval(counter, 1000);
+                    let count = setInterval(counter, 1000);
 
-                // get the word
-                const randIndex1 = Math.floor(Math.random() * myList.gWord.length);
+                    // get the word
+                    const randIndex1 = Math.floor(Math.random() * myList.gWord.length);
 
-                        // get a random string within the list
-                        word = myList.gWord[randIndex1];
+                    // get a random string within the list
+                    word = myList.gWord[randIndex1];
 
-                        // console.log(word)
-                        // convert the string into an array of character
-                        let arr1 = word.split('');
+                    // convert the string into an array of character
+                    let arr1 = word.split('');
 
-                        const newWord = shuffle(...arr1);
+                    // assign the the value return by shuffle function into a variable
+                    const newWord = shuffle(...arr1);
 
-                        console.log(newWord);
+                    // display the letter 
+                    document.querySelector('.display-letter1').innerHTML = newWord.join();
 
-                        // display the letter 
-                        document.querySelector('.display-letter1').innerHTML = newWord.join();
-
-                        // display the hint
-                        document.querySelector('.hint1').innerHTML = myList.hint[randIndex1];
+                    // display the hint
+                    document.querySelector('.hint1').innerHTML = myList.hint[randIndex1];
 
                     // check the answer will stop the timer and reset it to 0
                     document.querySelector('.check1').onclick = () => {
                     clearInterval(count);
-                    
-                    }
+
+                    // clear the hint 
+                    document.querySelector('.hint1').innerHTML = '';
+
+                    // get the player answer
+                    const playerAnsw = document.querySelector('#answ1').value;
+
+                    // clear the input text field
+                    document.querySelector('#answ1').value = '';
+
+                    // clear the display letter area
+                    document.querySelector('.display-letter1').innerHTML = '';
+
+                        
+                 }
 
             }
 
