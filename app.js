@@ -9,15 +9,14 @@ const myList = {
 //  score variable
 let scoreVarInt = 0;
 
-// counter function
+// variable to store the time
 let second = 30;
 
 // function to set the timer
 function counter() {
     second--;
+    document.querySelector('.timer1').innerHTML = `Time: ${second}`;
 }
-
-// setInterval(counter, 1000);
 
 // declare variable word
 let word = [];
@@ -225,9 +224,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     // hide get players page and display game page 2
                     document.querySelector('.players-2').style.display = 'none';
                     document.querySelector('.game-page-2').style.display = 'flex';
-                       
-                }
+            }
 
+            // when click to get a word
+                document.querySelector('.change1').onclick = () => {
+                    // set the timer
+                    setInterval(counter, 1000);
+
+                    if(second == 20){
+                        console.log("well done");
+                    }  
+            }
 
                 // document.querySelector('.player-name').innerHTML = player.dataset.name = 'Ngalemo';
             } else if (player.dataset.name === 'player3') {

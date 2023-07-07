@@ -300,7 +300,7 @@ header {
     font-size: 2rem;
 }
 
-.letter {
+.letter, .letter1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -333,7 +333,7 @@ header {
     padding-top: 22px;
 }
 
-.reset, .check, .change {
+.reset, .check, .change, .change1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -349,7 +349,7 @@ header {
      box-shadow: 5px -7px #333;
 }
 
-.reset:hover, .check:hover, .change:hover {
+.reset:hover, .check:hover, .change:hover, .change1:hover {
     background: rgb(188, 41, 41);
     color: white;
 }
