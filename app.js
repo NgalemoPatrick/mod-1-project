@@ -221,9 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             document.querySelector('.end-of-page').style.display = 'flex';
                             document.querySelector('#message').innerHTML = 'WELL DONE, YOU WIN.'
                         }
-
                     }
-
                 }
                 // 2 players section 
             } else if (player.dataset.name === 'player2') {
@@ -286,12 +284,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector('#answ1').value = '';
 
                     // clear the display letter area
-                    document.querySelector('.display-letter1').innerHTML = '';
-
-                        
+                    document.querySelector('.display-letter1').innerHTML = '';  
                  }
 
-            }
+              }
+              
+              // function to quit the game page
+                document.querySelector('.reset1').onclick = () => {
+                        scoreVarInt = 0;
+                        document.querySelector('.welcome-page').style.display = 'flex';
+                        document.querySelector('.game-page-2').style.display = 'none';
+                        document.querySelector('#scr1').innerHTML = `SCORE: ${scoreVarInt}`;
+                        document.querySelector('#scr2').innerHTML = `SCORE: ${scoreVarInt}`;
+                        document.querySelector('.display-letter1').innerHTML = '';
+                        document.querySelector('.hint1').innerHTML = '';
+                 }
 
                 // document.querySelector('.player-name').innerHTML = player.dataset.name = 'Ngalemo';
             } else if (player.dataset.name === 'player3') {
