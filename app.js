@@ -24,26 +24,11 @@ let word = [];
 //variable 
 let isSwitch = true;
 
-// // class playe
-
-// class Player {
-//     name = '';
-//     score = 0;
-//     constructor(name) {
-//         this.name = name;
-//     }
-
-//     score() {
-//         return this.score++;
-//     }
-// }
-
-
-// //--------------------------------- player instance
-// const onePlayer = new Player();
+//variable to store player name
+let pName1 = '';
+let pName2 = '';
 
 // function to shuffle the word
-
 function shuffle(...arrW) {
     for (let i = 0; i < arrW.length; i++) {
 
@@ -105,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.game-page').style.display = 'flex';
 
         // set the score to 0
-        document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+        document.querySelector('.scr').innerHTML = `SCORE: ${scoreVarInt}`;
     }
 
 
@@ -205,14 +190,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         // check if answer est = word
                         if (playerAnsw === word) {
                             scoreVarInt = scoreVarInt + 5;
-                            document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+                            document.querySelector('.scr').innerHTML = ` ${scoreVarInt}`;
 
                         } else if (playerAnsw !== word) {
 
                             document.querySelector('.hint').innerHTML = 'incorrect!!';
                         } else if (playerAnsw === '') {
                             // scoreVarInt = scoreVarInt + 0;
-                            document.querySelector('#scr').innerHTML = `SCORE: ${scoreVarInt}`;
+                            document.querySelector('.scr').innerHTML = ` ${scoreVarInt}`;
                         }
 
                         // winning state
@@ -229,22 +214,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('.get-player-name').style.display = 'none';
                 
                 document.querySelector('#plns').onclick = () => {
-                 // get players name ---- player 1
-                    const pName1 = document.querySelector('#players-2-name1').value;
-                    document.querySelector('#players-2-name1').value = '';
-                    document.querySelector('#pln1').innerHTML = pName1;
-                    console.log(pName1)
+                // get players name ---- player 1
+                pName1 = document.querySelector('#players-2-name1').value;
+                document.querySelector('#players-2-name1').value = '';
+                document.querySelector('#pln1').innerHTML = pName1;
+                document.querySelector('.display-letter1').innerHTML = `${pName1} turn`;
 
-                    // player 2
-                    const pName2 = document.querySelector('#players-2-name2').value;
-                    document.querySelector('#pln2').innerHTML = pName2;
-                    document.querySelector('#players-2-name2').value = ''; 
-                    document.querySelector('#pln2').innerHTML = pName2;
-                    console.log(pName2)
+                // player 2
+                pName2 = document.querySelector('#players-2-name2').value;
+                document.querySelector('#pln2').innerHTML = pName2;
+                document.querySelector('#players-2-name2').value = ''; 
+                document.querySelector('#pln2').innerHTML = pName2;
+                   
                     
-                    // hide get players page and display game page 2
-                    document.querySelector('.players-2').style.display = 'none';
-                    document.querySelector('.game-page-2').style.display = 'flex';
+                // hide get players page and display game page 2
+                document.querySelector('.players-2').style.display = 'none';
+                document.querySelector('.game-page-2').style.display = 'flex';
             }
 
             // when click to get a word
@@ -278,13 +263,37 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector('.hint1').innerHTML = '';
 
                     // get the player answer
-                    const playerAnsw = document.querySelector('#answ1').value;
+                    const playersAnsw1 = document.querySelector('#answ1').value;
 
                     // clear the input text field
                     document.querySelector('#answ1').value = '';
 
                     // clear the display letter area
                     document.querySelector('.display-letter1').innerHTML = '';  
+
+                    // set timeout before inviting player 2
+                    document.querySelector('.display-letter1').innerHTML = `${pName2} turn`;
+                   
+                    
+                    // check if answer est = word
+                    if (playersAnsw1 === word) {
+                        scoreVarInt = scoreVarInt + 5;
+                        document.querySelector('.scr1').innerHTML = `SCORE: ${scoreVarInt}`;
+
+                    } else if (playersAnsw1 !== word) {
+                        document.querySelector('.hint1').innerHTML = 'incorrect!!';
+                    } else if (playersAnsw1 === '') {
+                        document.querySelector('.scr1').innerHTML = `SCORE: ${scoreVarInt}`;
+                    }
+
+                    // winning state
+                    if (scoreVarInt === 10) {
+                        document.querySelector('.game-page-2').style.display = 'none';
+                        // document.querySelector('.end-of-page').style.display = 'flex';
+                        // document.querySelector('#message').innerHTML = 'WELL DONE, YOU WIN.'
+                    }
+
+
                  }
 
               }
