@@ -5,3 +5,6 @@ Players must unscramble a set of letters to form a word within a given time limi
 1. Beginner 70 points to win
 2. Intermediate 120 points
 3. Expert 200 points
+
+## Need to work on the timer and switch between player
+
